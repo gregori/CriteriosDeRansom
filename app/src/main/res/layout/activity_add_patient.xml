@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddPatient">
 
-    <CheckBox
-        android:id="@+id/chk_litiase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Litíase biliar?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nome" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -32,17 +22,70 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/txt_name_pct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Idade:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name_pct" />
+
+    <EditText
+        android:id="@+id/edt_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <CheckBox
+        android:id="@+id/chk_litiasis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:text="Litíase biliar?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_age" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:text="Leucócitos:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_litiase" />
+        app:layout_constraintTop_toBottomOf="@+id/chk_litiasis" />
 
     <EditText
-        android:id="@+id/edt_leucocitos"
+        android:id="@+id/edt_leukocytes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -59,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="cél./mm3"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edt_leucocitos"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_leukocytes"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -69,17 +112,17 @@
         android:layout_marginTop="16dp"
         android:text="Glicemia"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/edt_leucocitos" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_leukocytes" />
 
     <EditText
-        android:id="@+id/edt_glicemia"
+        android:id="@+id/edt_glucose"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/edt_leucocitos"
-        app:layout_constraintStart_toStartOf="@+id/edt_leucocitos" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_leukocytes"
+        app:layout_constraintStart_toStartOf="@+id/edt_leukocytes" />
 
     <TextView
         android:id="@+id/textView5"
@@ -87,7 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="mmol/L"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edt_glicemia"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_glucose"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -97,7 +140,7 @@
         android:layout_marginTop="16dp"
         android:text="AST/TGO"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/edt_glicemia" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_glucose" />
 
     <EditText
         android:id="@+id/edt_ast"
@@ -106,8 +149,8 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="@+id/edt_glicemia"
-        app:layout_constraintStart_toStartOf="@+id/edt_glicemia" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_glucose"
+        app:layout_constraintStart_toStartOf="@+id/edt_glucose" />
 
     <TextView
         android:id="@+id/textView7"
@@ -150,35 +193,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edt_ldh" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Nome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/txt_nome"
+    <Button
+        android:id="@+id/btn_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <Button
-        android:id="@+id/txt_add"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Adicionar Paciente"
         app:layout_constraintEnd_toEndOf="parent"
@@ -186,15 +206,15 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_ldh" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txt_score_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="Pontuação:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_add" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
 
     <TextView
         android:id="@+id/txt_score"
@@ -202,28 +222,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_score_label"
+        app:layout_constraintStart_toEndOf="@+id/txt_score_label"
         tools:text="pontuação" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txt_mortality_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Mortalidade:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintStart_toStartOf="@+id/txt_score_label"
+        app:layout_constraintTop_toBottomOf="@+id/txt_score_label" />
 
     <TextView
-        android:id="@+id/txt_mortality"
+        android:id="@+id/txt_mortality_pct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_mortality_label"
+        app:layout_constraintStart_toEndOf="@+id/txt_mortality_label"
         tools:text="mortalidade" />
 
 </android.support.constraint.ConstraintLayout>
